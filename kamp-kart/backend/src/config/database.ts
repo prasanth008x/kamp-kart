@@ -32,8 +32,10 @@ const connectDB = async (): Promise<void> => {
     });
 
   } catch (error) {
-    console.error('Error connecting to MongoDB:', error);
-    process.exit(1);
+    console.error('⚠️  MongoDB connection failed:', error.message);
+    console.log('📝 Running in demo mode without database');
+    console.log('🚀 Server will start but database features will be limited');
+    // Don't exit - continue running for demo purposes
   }
 };
 
